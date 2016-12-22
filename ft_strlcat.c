@@ -1,40 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/28 12:16:03 by prossi            #+#    #+#             */
-/*   Updated: 2016/12/01 14:08:47 by prossi           ###   ########.fr       */
+/*   Created: 2016/12/22 10:58:38 by prossi            #+#    #+#             */
+/*   Updated: 2016/12/22 11:13:50 by prossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+size_t			ft_strlcat(char *dest, const char *src, size_t size)
 {
+	size_t	size_dest;
+	size_t	size_src;
+	size_t	t_size;
 	size_t	i;
-	int		result;
-	size_t	ifneg;
 
+	size_dest = ft_strlen(dest);
+	size_src = ft_strlen(src);
+	t_size = size_dest + size_src;
 	i = 0;
-	result = 0;
-	ifneg = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ' || str[i] == '+')
-		i++;
-	if (str[i] == '-')
-	{
-		ifneg++;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		result = result * 10 + str[i] - '0';
-		i++;
-	}
-	if (ifneg == 1)
-		return (-result);
-	return (result);
+	while (src[i] && size_dest < size - 1 && size != 0)
+		dest[size_dest++] = src[i++];
+	dest[size_dest] = '\0';
+	if (size < t_size - size_src)
+		return (size + size_src);
+	return (t_size);
 }

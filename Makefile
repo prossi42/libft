@@ -6,43 +6,29 @@
 #    By: prossi <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/16 11:34:52 by prossi            #+#    #+#              #
-#    Updated: 2016/12/14 10:13:46 by prossi           ###   ########.fr        #
+#    Updated: 2016/12/22 13:52:32 by prossi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-REP_SRCS = srcs/
+HEAD = ./libft.h
 
-HEAD = includes/
-
-SRC = $(REP_SRCS)ft_strlen.c $(REP_SRCS)ft_strdup.c \
-	  $(REP_SRCS)ft_strcpy.c $(REP_SRCS)ft_strncpy.c \
-	  $(REP_SRCS)ft_strcat.c $(REP_SRCS)ft_strncat.c \
-	  $(REP_SRCS)ft_putchar.c $(REP_SRCS)ft_putchar_fd.c \
-	  $(REP_SRCS)ft_putstr.c $(REP_SRCS)ft_putstr_fd.c \
-	  $(REP_SRCS)ft_memset.c $(REP_SRCS)ft_bzero.c \
-	  $(REP_SRCS)ft_memcpy.c $(REP_SRCS)ft_memccpy.c \
-	  $(REP_SRCS)ft_memmove.c $(REP_SRCS)ft_memchr.c \
-	  $(REP_SRCS)ft_memcmp.c $(REP_SRCS)ft_strchr.c \
-	  $(REP_SRCS)ft_strrchr.c $(REP_SRCS)ft_strstr.c \
-	  $(REP_SRCS)ft_strnstr.c $(REP_SRCS)ft_strcmp.c \
-	  $(REP_SRCS)ft_strncmp.c $(REP_SRCS)ft_atoi.c \
-	  $(REP_SRCS)ft_isalpha.c $(REP_SRCS)ft_isdigit.c \
-	  $(REP_SRCS)ft_isalnum.c $(REP_SRCS)ft_isascii.c \
-	  $(REP_SRCS)ft_isprint.c $(REP_SRCS)ft_toupper.c \
-	  $(REP_SRCS)ft_tolower.c $(REP_SRCS)ft_memalloc.c \
-	  $(REP_SRCS)ft_memdel.c $(REP_SRCS)ft_strnew.c \
-	  $(REP_SRCS)ft_strdel.c $(REP_SRCS)ft_strclr.c \
-	  $(REP_SRCS)ft_striter.c $(REP_SRCS)ft_striteri.c \
-	  $(REP_SRCS)ft_strmap.c $(REP_SRCS)ft_strmapi.c \
-	  $(REP_SRCS)ft_strequ.c $(REP_SRCS)ft_strnequ.c \
-	  $(REP_SRCS)ft_strsub.c $(REP_SRCS)ft_strjoin.c \
-	  $(REP_SRCS)ft_putendl.c $(REP_SRCS)ft_strtrim.c \
-	  $(REP_SRCS)ft_putendl_fd.c $(REP_SRCS)ft_putnbr.c \
-	  $(REP_SRCS)ft_putnbr_fd.c $(REP_SRCS)ft_itoa.c \
-	  $(REP_SRCS)ft_lenint.c $(REP_SRCS)ft_strputneg.c \
-	  $(REP_SRCS)ft_strsplit.c $(REP_SRCS)ft_countwords.c
+SRC = ft_strlen.c ft_strdup.c ft_strcpy.c ft_strncpy.c \
+	  ft_strcat.c ft_strncat.c ft_putchar.c ft_putchar_fd.c \
+	  ft_putstr.c ft_putstr_fd.c ft_memset.c ft_bzero.c \
+	  ft_memcpy.c ft_memccpy.c ft_memmove.c ft_memchr.c \
+	  ft_memcmp.c ft_strchr.c ft_strrchr.c ft_strstr.c \
+	  ft_strnstr.c ft_strcmp.c ft_strncmp.c ft_atoi.c \
+	  ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
+	  ft_isprint.c ft_toupper.c ft_tolower.c ft_memalloc.c \
+	  ft_memdel.c ft_strnew.c ft_strdel.c ft_strclr.c \
+	  ft_striter.c ft_striteri.c ft_strmap.c ft_strmapi.c \
+	  ft_strequ.c ft_strnequ.c ft_strsub.c ft_strjoin.c \
+	  ft_putendl.c ft_strtrim.c ft_putendl_fd.c ft_putnbr.c \
+	  ft_putnbr_fd.c ft_itoa.c ft_lenint.c ft_strputneg.c \
+	  ft_strsplit.c ft_countw.c ft_strlcat.c ft_isupper.c \
+	  ft_islower.c ft_isblank.c
 
 OBJ = ft_strlen.o ft_strdup.o ft_strcpy.o ft_strncpy.o ft_strcat.o \
 	  ft_strncat.o ft_putchar.o ft_putchar_fd.o ft_putstr.o \
@@ -57,7 +43,8 @@ OBJ = ft_strlen.o ft_strdup.o ft_strcpy.o ft_strncpy.o ft_strcat.o \
 	  ft_strnequ.o ft_strsub.o ft_strjoin.o ft_putendl.o \
 	  ft_strtrim.o ft_putendl_fd.o ft_putnbr.o ft_putnbr_fd.o \
 	  ft_itoa.o ft_lenint.o ft_strputneg.o ft_strsplit.o \
-	  ft_countwords.c
+	  ft_countw.o ft_strlcat.o ft_isupper.o ft_islower.o \
+	  ft_isblank.o
 
 all: $(NAME)
 

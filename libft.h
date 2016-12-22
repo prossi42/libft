@@ -6,7 +6,7 @@
 /*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 13:39:16 by prossi            #+#    #+#             */
-/*   Updated: 2016/12/14 12:25:22 by prossi           ###   ########.fr       */
+/*   Updated: 2016/12/22 13:52:10 by prossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,10 @@ char			*ft_itoa(int n);
 int				ft_lenint(int n);
 char			*ft_strputneg(int n, char *strnb);
 char			**ft_strsplit(char const *s, char c);
-size_t			ft_countwords(char const *s, char c);
+int				ft_countw(char const *s, char c);
+size_t			ft_strlcat(char *dest, const char *src, size_t size);
+int				ft_isupper(int c);
+int				ft_islower(int c);
+int				ft_isblank(int c);
 
 #endif

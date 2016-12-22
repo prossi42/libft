@@ -1,45 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/13 13:30:19 by prossi            #+#    #+#             */
-/*   Updated: 2016/12/13 16:32:18 by prossi           ###   ########.fr       */
+/*   Created: 2016/12/02 11:10:27 by prossi            #+#    #+#             */
+/*   Updated: 2016/12/22 12:18:49 by prossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
-char	**ft_strsplit(char const *s, char c)
+char	*ft_strnew(size_t size)
 {
-	char				**tabstr;
-	unsigned int		start;
-	size_t				len;
-	size_t				x;
-	size_t				i;
+	char *str;
 
-	start = 0;
-	x = 0;
-	i = 0;
-	while (s[i])
-	{
-		len = 0; 
-		while (s[i] != c)
-		{
-			if (start == 0)
-				start = i;
-			len++;
-			i++;
-		}
-		if (len > 0)
-		{
-			if (!(tabstr[x] = ft_strsub(s, start, len)))
-				return (NULL);
-			x++;
-		}
-		i++;
-	}
-	return (tabstr);
+	str = (char *)ft_memalloc(size + 1);
+	return (str);
 }
