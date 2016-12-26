@@ -6,7 +6,7 @@
 #    By: prossi <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/16 11:34:52 by prossi            #+#    #+#              #
-#    Updated: 2016/12/22 13:52:32 by prossi           ###   ########.fr        #
+#    Updated: 2016/12/26 11:50:22 by prossi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,8 @@ SRC = ft_strlen.c ft_strdup.c ft_strcpy.c ft_strncpy.c \
 	  ft_putendl.c ft_strtrim.c ft_putendl_fd.c ft_putnbr.c \
 	  ft_putnbr_fd.c ft_itoa.c ft_lenint.c ft_strputneg.c \
 	  ft_strsplit.c ft_countw.c ft_strlcat.c ft_isupper.c \
-	  ft_islower.c ft_isblank.c
+	  ft_islower.c ft_isblank.c ft_lstnew.c ft_lstdelone.c \
+	  ft_lstdel.c ft_lstadd.c ft_lstiter.c ft_lstmap.c
 
 OBJ = ft_strlen.o ft_strdup.o ft_strcpy.o ft_strncpy.o ft_strcat.o \
 	  ft_strncat.o ft_putchar.o ft_putchar_fd.o ft_putstr.o \
@@ -44,7 +45,8 @@ OBJ = ft_strlen.o ft_strdup.o ft_strcpy.o ft_strncpy.o ft_strcat.o \
 	  ft_strtrim.o ft_putendl_fd.o ft_putnbr.o ft_putnbr_fd.o \
 	  ft_itoa.o ft_lenint.o ft_strputneg.o ft_strsplit.o \
 	  ft_countw.o ft_strlcat.o ft_isupper.o ft_islower.o \
-	  ft_isblank.o
+	  ft_isblank.o ft_lstnew.o ft_lstdelone.o ft_lstdel.o \
+	  ft_lstadd.o ft_lstiter.o ft_lstmap.o
 
 all: $(NAME)
 

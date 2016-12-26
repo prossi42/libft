@@ -6,7 +6,7 @@
 /*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 13:39:16 by prossi            #+#    #+#             */
-/*   Updated: 2016/12/22 13:52:10 by prossi           ###   ########.fr       */
+/*   Updated: 2016/12/26 11:50:06 by prossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 # define LIBFT_H
 
 # include <string.h>
+
+typedef struct	s_list
+{
+	void				*content;
+	size_t				content_size;
+	struct s_list		*next;
+}				t_list;
 
 typedef	unsigned char	t_byte;
 
@@ -75,5 +82,11 @@ size_t			ft_strlcat(char *dest, const char *src, size_t size);
 int				ft_isupper(int c);
 int				ft_islower(int c);
 int				ft_isblank(int c);
+t_list			*ft_lstnew(void const *content, size_t content_size);
+void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
+void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void			ft_lstadd(t_list **alst, t_list *new);
+void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 #endif

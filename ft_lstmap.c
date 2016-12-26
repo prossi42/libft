@@ -1,38 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/26 14:09:12 by prossi            #+#    #+#             */
-/*   Updated: 2016/12/26 12:13:24 by prossi           ###   ########.fr       */
+/*   Created: 2016/12/26 11:29:20 by prossi            #+#    #+#             */
+/*   Updated: 2016/12/26 12:01:44 by prossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	size_t	i;
-	size_t	j;
+	t_list	*new;
 
-	if (*little == '\0')
-		return ((char*)big);
-	i = 0;
-	j = 0;
-	while (big[j] && j < len)
-	{
-		if (big[j] == little[i])
-			i++;
-		else
-		{
-			j = j - i;
-			i = 0;
-		}
-		if (little[i] == '\0')
-			return ((char*)&(big[j - i + 1]));
-		j++;
-	}
-	return (NULL);
+	if (!lst)
+		return (NULL);
+	if (!(new = (t_list *)malloc(sizeof(f(lst)))))
+		return (NULL);
+	new = f(lst);
+	new->next = ft_lstmap(lst->next, f);
+	return (new);
 }
